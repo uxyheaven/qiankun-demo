@@ -6,8 +6,12 @@
     <router-link to="/app2/page1">go to app2-page1</router-link>
     <br />
     <br />
-    <div @click="clickBtn1">vue router name 无法正常跳转至其他子应用</div>
-    <div @click="clickBtn2">vue router path 无法正常跳转至其他子应用</div>
+    <div @click="clickBtn1">
+      vue router name (app2-page2) 无法正常跳转至其他子应用
+    </div>
+    <div @click="clickBtn2">
+      vue router path (/app2#/page2) 无法正常跳转至其他子应用
+    </div>
     <div @click="clickBtn3">go to app2-page1</div>
     <br />
     <br />

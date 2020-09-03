@@ -1,12 +1,12 @@
 <template>
   <div id="subapp-container">
     <span>app1:</span>
-    <a href="/app1/page1">page1 </a>
-    <a href="/app1/page2">page2 </a>
+    <a href="/app1#/page1">page1 </a>
+    <a href="/app1#/page2">page2 </a>
     <br />
     <span>app2:</span>
-    <a href="/app2/page1">page1 </a>
-    <a href="/app2/page2">page2 </a>
+    <a href="/app2#/page1">page1 </a>
+    <a href="/app2#/page2">page2 </a>
 
     <div>
       {{ loading ? 'loading' : 'done' }}
