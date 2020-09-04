@@ -9,7 +9,7 @@
     <a href="/app2#/page2">page2 </a>
 
     <div>
-      {{ loading ? 'loading' : 'done' }}
+      {{ appLoading ? 'loading' : 'done' }}
     </div>
     <!-- 子应用盒子 -->
     <div id="subapp-viewport"></div>
@@ -24,6 +24,11 @@ export default {
     loading: {
       type: Boolean,
       default: true,
+    },
+  },
+  computed: {
+    appLoading() {
+      return this.$store.state.appLoading
     },
   },
   // data() {
