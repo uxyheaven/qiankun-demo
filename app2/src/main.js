@@ -30,11 +30,11 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log('app2: vue app bootstraped')
+  console.log('[app2]: vue app bootstraped')
 }
 
 export async function mount(props) {
-  console.log('app2: props from main app', props)
+  console.log('[app2]: props from main app', props)
   render()
 }
 
@@ -43,4 +43,5 @@ export async function unmount() {
   instance.$el.innerHTML = ''
   instance = null
   router = null
+  console.log('[app2]: vue app unmount')
 }

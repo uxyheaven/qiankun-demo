@@ -36,11 +36,11 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 export async function bootstrap() {
-  console.log('[app1: vue app bootstraped')
+  console.log('[app1]: vue app bootstraped')
 }
 
 export async function mount(props) {
-  console.log('[app1: props from main app', props)
+  console.log('[app1]: props from main app', props)
 
   // 注册共享状态
   globalRegister(store, props)
@@ -53,4 +53,5 @@ export async function unmount() {
   instance.$el.innerHTML = ''
   instance = null
   router = null
+  console.log('[app1]: vue app unmount')
 }
