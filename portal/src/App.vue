@@ -9,8 +9,10 @@
       <span>app2:</span>
       <a href="/app2#/page1">page1 </a>
       <a href="/app2#/page2">page2 </a>
+      <br />
+      <div>GlobalState: {{ JSON.stringify($store.state) }}</div>
     </div>
-    <!-- 加载时的Loading -->
+    <!-- 加载子应用时的Loading -->
     <div>
       {{ appLoading ? 'loading' : 'done' }}
     </div>

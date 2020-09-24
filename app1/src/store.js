@@ -5,16 +5,16 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    app1_value1: 1,
+    app1Count: 0,
   },
   mutations: {
-    setApp1Value1(state, value) {
-      state.app1_value1 = value
+    setApp1Count(state, value) {
+      state.app1Count = value
     },
   },
   actions: {
-    setApp1Value1: ({ commit }, valve) => {
-      commit('setApp1Value1', valve)
+    setApp1Count: ({ commit }, valve) => {
+      commit('setApp1Count', valve)
     },
   },
 })

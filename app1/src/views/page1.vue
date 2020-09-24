@@ -6,7 +6,10 @@
     <div @click="clickBtn3">跨应用跳转 app2-page1</div>
     <br />
     <div @click="clickAdd">
-      app1_value1: {{ this.$store.state.app1_value1 }} 点这里+1
+      修改自己的state的值: {{ this.$store.state.app1Count }} 点击加1
+    </div>
+    <div @click="clickAddGlobal">
+      修改父应用的state的值: {{ this.$store.state.global.count }} 点击加1
     </div>
     <div></div>
   </div>
@@ -42,7 +45,12 @@ export default {
       history.pushState(null, null, '/app2#/page1')
     },
     clickAdd() {
-      this.$store.dispatch('setApp1Value1', this.$store.state.app1_value1 + 1)
+      this.$store.dispatch('setApp1Count', this.$store.state.app1Count + 1)
+    },
+    clickAddGlobal() {
+      this.$store.dispatch('global/setGlobalState', {
+        count: this.$store.state.global.count + 1,
+      })
     },
   },
 }

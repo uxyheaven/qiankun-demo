@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div>app1</div>
+    <div>状态:{{ JSON.stringify($store.state) }}</div>
     <router-view />
   </div>
 </template>
