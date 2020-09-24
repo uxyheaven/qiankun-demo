@@ -1,17 +1,20 @@
 <template>
-  <div id="subapp-container">
-    <span>app1:</span>
-    <a href="/app1#/page1">page1 </a>
-    <a href="/app1#/page2">page2 </a>
-    <br />
-    <span>app2:</span>
-    <a href="/app2#/page1">page1 </a>
-    <a href="/app2#/page2">page2 </a>
-
+  <div id="layout-wrapper">
+    <!-- 主应用导航 -->
+    <div id="layout-header">
+      <span>app1:</span>
+      <a href="/app1#/page1">page1 </a>
+      <a href="/app1#/page2">page2 </a>
+      <br />
+      <span>app2:</span>
+      <a href="/app2#/page1">page1 </a>
+      <a href="/app2#/page2">page2 </a>
+    </div>
+    <!-- 加载时的Loading -->
     <div>
       {{ appLoading ? 'loading' : 'done' }}
     </div>
-    <!-- 子应用盒子 -->
+    <!-- 子应用挂载点 -->
     <div id="subapp-viewport"></div>
   </div>
 </template>

@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div>this is page2</div>
-    <router-link to="/page1">go to app1-page1</router-link>
-    <router-link to="/page1">go to app1-page1</router-link>
+    <div>page2</div>
+    <router-link to="/page1">应用内跳转 page1</router-link>
   </div>
 </template>
 

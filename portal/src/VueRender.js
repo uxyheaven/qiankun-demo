@@ -9,7 +9,7 @@ Vue.use(Vuex)
 
 function vueRender() {
   return new Vue({
-    el: '#subapp-container',
+    el: '#main-app',
     store,
     render: h => h(App),
     // data() {
