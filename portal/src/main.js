@@ -15,11 +15,7 @@ import render from './VueRender'
 /**
  * Step1 初始化应用
  */
-render({ loading: false })
-const loader = loading => {
-  render({ loading })
-  console.log('loading', loading)
-}
+render()
 
 // 创建共享状态, 取自store.state
 import store from '@/store'
@@ -39,29 +35,25 @@ onGlobalStateChange((newState, oldState) => {
 /**
  * Step2 注册子应用
  */
-const microApps = [
-  {
-    name: 'app1',
-    entry: '//localhost:9001',
-    activeRule: '/app1',
-    container: '#subapp-viewport',
-    loader,
+import microApps from '@/microApps'
+const loader = loading => {
+  store.dispatch('setAppLoading', loading)
+  console.log('loading', loading)
+}
+const apps = microApps.map(app => {
+  return {
+    ...app,
+    container: '#subapp-viewport', // 子应用挂载的div
+    loader, // 子应用加载开始/完成, 会调用loader方法
     props: {
-      globalState: store.state,
+      ...app.props,
+      routerBase: app.activeRule, // 下发基础路由
+      globalState: store.state, // 下发globalState
     },
-  },
-  {
-    name: 'app2',
-    entry: '//localhost:9002',
-    activeRule: '/app2',
-    container: '#subapp-viewport',
-    loader,
-    props: {
-      globalState: store.state,
-    },
-  },
-]
-registerMicroApps(microApps, {
+  }
+})
+
+registerMicroApps(apps, {
   // 挂载前回调
   beforeLoad: [
     app => {

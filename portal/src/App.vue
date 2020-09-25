@@ -2,14 +2,11 @@
   <div id="layout-wrapper">
     <!-- 主应用导航 -->
     <div id="layout-header">
-      <span>app1:</span>
-      <a href="/app1#/page1">page1 </a>
-      <a href="/app1#/page2">page2 </a>
-      <br />
-      <span>app2:</span>
-      <a href="/app2#/page1">page1 </a>
-      <a href="/app2#/page2">page2 </a>
-      <br />
+      <div style="display:flex; justify-content:space-around;">
+        <div @click="clickApp1">[app1]</div>
+        <div @click="clickApp2">[app2]</div>
+      </div>
+
       <div>GlobalState: {{ JSON.stringify($store.state) }}</div>
     </div>
     <!-- 加载子应用时的Loading -->
@@ -41,6 +38,14 @@ export default {
   //     loading: true,
   //   }
   // },
+  methods: {
+    clickApp1() {
+      history.pushState(null, null, '/app1')
+    },
+    clickApp2() {
+      history.pushState(null, null, '/app2')
+    },
+  },
 }
 </script>
 

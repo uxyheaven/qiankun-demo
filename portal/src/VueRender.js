@@ -12,26 +12,9 @@ function vueRender() {
     el: '#main-app',
     store,
     render: h => h(App),
-    // data() {
-    //   return {
-    //     loading,
-    //   }
-    // },
   })
 }
 
-let app = null
-
-export default function render({ loading }) {
-  if (!app) {
-    app = vueRender({ loading: true })
-  } else {
-    // app.loading = loading
-    /* 给App中的loading赋值, 用下面的方法会报错, 因为不推荐直接改子组件中的值
-     * app.$children[0].loading = loading
-     */
-    store.dispatch('setAppLoading', loading)
-    // eslint-disable-next-line
-    // debugger
-  }
+export default function render() {
+  vueRender()
 }
