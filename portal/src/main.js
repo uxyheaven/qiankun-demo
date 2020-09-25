@@ -74,8 +74,8 @@ registerMicroApps(apps, {
   ],
 })
 
-// 设置默认子应用,与 genActiveRule中的参数保持一致
-setDefaultMountApp('/app1')
+// 设置默认子应用
+setDefaultMountApp(apps[0].activeRule)
 
 // 启动
 start()
