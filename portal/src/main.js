@@ -74,8 +74,12 @@ registerMicroApps(apps, {
   ],
 })
 
-// 设置默认子应用
+/**
+ * Step3 设置默认子应用
+ */
 setDefaultMountApp(apps[0].activeRule)
 
-// 启动
+/**
+ * Step4 启动
+ */
 start()

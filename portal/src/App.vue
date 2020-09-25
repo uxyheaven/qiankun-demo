@@ -3,8 +3,9 @@
     <!-- 主应用导航 -->
     <div id="layout-header">
       <div style="display:flex; justify-content:space-around;">
-        <div @click="clickApp1">[app1]</div>
-        <div @click="clickApp2">[app2]</div>
+        <div v-for="app in apps" :key="app.name" @click="clickApp(app)">
+          {{ app.name }}
+        </div>
       </div>
 
       <div>GlobalState: {{ JSON.stringify($store.state) }}</div>
@@ -19,6 +20,8 @@
 </template>
 
 <script>
+import apps from './microApps.js'
+
 export default {
   name: 'Portal',
   components: {},
@@ -32,6 +35,9 @@ export default {
     appLoading() {
       return this.$store.state.appLoading
     },
+    apps() {
+      return apps
+    },
   },
   // data() {
   //   return {
@@ -39,11 +45,8 @@ export default {
   //   }
   // },
   methods: {
-    clickApp1() {
-      history.pushState(null, null, '/app1')
-    },
-    clickApp2() {
-      history.pushState(null, null, '/app2')
+    clickApp(app) {
+      history.pushState(null, null, app.activeRule)
     },
   },
 }
