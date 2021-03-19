@@ -61,9 +61,6 @@ https://github.com/FEMessage/nuxt-micro-frontend
 
 - 依赖管理
 
-发布私有组件库
-
-http://confluence.sf-express.com/pages/viewpage.action?pageId=38592191
 
 ### 开发调试/打包部署
 
